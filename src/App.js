@@ -22,7 +22,6 @@ class App extends Component {
   handlerText(e){
     this.setState({
       newTask: e.target.value,
-      isError: ''
     })
   }
 
