@@ -29,7 +29,6 @@ class App extends Component {
     if(e.key==="Enter"){
       if(this.state.newTask === '') {
         e.preventDefault()
-        console.log("vacio");
         this.setState({
           isError: 'error'
         })
@@ -76,7 +75,7 @@ class App extends Component {
         <div className="list">
           <h3>Por hacer:</h3>
           <ul className="todo">
-            {this.state.tasks.map((task, index) => <li key={task.id} className={task.done === true ? `done` : ''} onClick={()=>this.handlerTaskClick(task.id)} >{task.name}</li>)}
+            {this.state.tasks.map((task, index) => <li key={task.id} className={task.done === true ? 'done' : null} onClick={()=>this.handlerTaskClick(task.id)} >{task.name}</li>)}
           </ul>
           <form>
             <input type="text" id="new-task" className={this.state.isError} placeholder="Ingresa una tarea y oprime Enter" value={this.state.newTask} onChange={this.handlerText} onKeyPress={this.handlerNewTask} />
